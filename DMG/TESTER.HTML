@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unit Power Calculator</title>
+  </head>
+  <body>
+    <h1>Unit Power Calculator</h1>
+
+    <label for="hp">Initial Health Points:</label>
+    <input type="number" id="hp" value="10" />
+
+    <label for="armor">Armor Percentage (leave blank for default):</label>
+    <input type="number" id="armor" placeholder="Leave blank for default" />
+
+    <label for="dmg">Damage:</label>
+    <input type="number" id="dmg" value="0" />
+
+    <label for="bonusDmg">Bonus Damage:</label>
+    <input type="number" id="bonusDmg" value="0" />
+
+    <button onclick="calculatePower()">Calculate Power</button>
+
+    <p id="result"></p>
+
+    <script>
+      function calculatePower() {
+        // Get user inputs
+        const hp = parseInt(document.getElementById("hp").value);
+        const armorInput = document.getElementById("armor").value;
+        const dmg = parseFloat(document.getElementById("dmg").value);
+        const bonusDmg = parseFloat(document.getElementById("bonusDmg").value);
+
+        // If armor is not provided, set it to 0
+        const armor = armorInput === "" ? 0 : parseFloat(armorInput) / 100;
+
+        // Perform the calculation
+        const totalPower = (hp / (1 - armor)) * dmg + bonusDmg;
+
+        // Display the result
+        document.getElementById(
+          "result"
+        ).innerHTML = `Total Power: ${totalPower}`;
+      }
+    </script>
+  </body>
+</html>

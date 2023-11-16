@@ -1,0 +1,74 @@
+body {
+  margin: 0;
+}
+
+#game-board {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  border: 1px solid #000;
+  background-image: url("WT34G.png");
+  background-size: cover;
+}
+.hidden {
+  display: none;
+  width: 50px;
+  height: 50px;
+  border: 2px solid black;
+}
+
+.player-square {
+  position: absolute;
+  cursor: grab;
+  z-index: 2;
+}
+
+.player-square img {
+  width: 60px;
+  height: 60px;
+  opacity: 2.4;
+}
+
+.blue-box-1,
+.red-box-1 {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border: 3px solid #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blue-box-1 {
+  top: 0%;
+  left: 0%;
+  background-color: rgba(6, 6, 245, 0.3);
+}
+
+.red-box-1 {
+  top: 0%;
+  left: 100%;
+  transform: translateX(-100%);
+  background-color: rgba(255, 0, 0, 0.3);
+}
+
+.neutral-box {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: #ccc;
+  border: 1px solid #000;
+}
+
+#search-bar-blue {
+  position: absolute;
+  top: 10px;
+  left: 500px;
+}
+
+#search-bar-red {
+  position: absolute;
+  top: 10px;
+  left: 800px;
+}
